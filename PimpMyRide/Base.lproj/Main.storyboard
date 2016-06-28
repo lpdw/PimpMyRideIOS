@@ -6,7 +6,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--First-->
+        <!--Dashboard-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="PimpMyRide" customModuleProvider="target" sceneMemberID="viewController">
@@ -33,6 +33,7 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.1277043269" green="0.1277043269" blue="0.1277043269" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="6BV-lF-sBN"/>
                             <constraint firstItem="A5M-7J-77L" firstAttribute="top" secondItem="KQZ-1w-vlD" secondAttribute="bottom" constant="8" symbolic="YES" id="cfb-er-3JN"/>
@@ -40,7 +41,7 @@
                             <constraint firstAttribute="centerY" secondItem="KQZ-1w-vlD" secondAttribute="centerY" id="exm-UA-ej4"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Dashboard" image="dashboard" selectedImage="dashboard" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="speedLabel" destination="KQZ-1w-vlD" id="6wW-rh-6lW"/>
                     </connections>
@@ -49,7 +50,7 @@
             </objects>
             <point key="canvasLocation" x="750" y="-320"/>
         </scene>
-        <!--Second-->
+        <!--Color-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="PimpMyRide" customModuleProvider="target" sceneMemberID="viewController">
@@ -83,7 +84,7 @@
                             <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" id="qzY-Ky-pLD"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Second" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Color" image="painter-palette" selectedImage="painter-palette" id="cPa-gy-q4n"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
@@ -355,7 +356,8 @@
     </scenes>
     <resources>
         <image name="LOGO" width="638" height="173"/>
-        <image name="first" width="30" height="30"/>
-        <image name="second" width="30" height="30"/>
+        <image name="dashboard" width="32" height="32"/>
+        <image name="painter-palette" width="32" height="32"/>
     </resources>
+    <color key="tintColor" red="0.1956250668" green="0.8888742328" blue="0.5251140594" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
