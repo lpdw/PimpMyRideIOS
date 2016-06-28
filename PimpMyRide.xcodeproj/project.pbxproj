@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD76E1CB2DF5800062A22EA3 /* Pods_PimpMyRide.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E2BDB1396440B2B1F4D156A /* Pods_PimpMyRide.framework */; };
 		C30A9D3C1D2145560050458E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30A9D3B1D2145560050458E /* AppDelegate.swift */; };
 		C30A9D3E1D2145560050458E /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30A9D3D1D2145560050458E /* FirstViewController.swift */; };
 		C30A9D401D2145560050458E /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30A9D3F1D2145560050458E /* SecondViewController.swift */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E2BDB1396440B2B1F4D156A /* Pods_PimpMyRide.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PimpMyRide.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CEC1AB7681FF25E23C41F9B /* Pods-PimpMyRide.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PimpMyRide.release.xcconfig"; path = "Pods/Target Support Files/Pods-PimpMyRide/Pods-PimpMyRide.release.xcconfig"; sourceTree = "<group>"; };
+		8FC53992C0C52910FB3EC800 /* Pods-PimpMyRide.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PimpMyRide.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PimpMyRide/Pods-PimpMyRide.debug.xcconfig"; sourceTree = "<group>"; };
 		C30A9D381D2145560050458E /* PimpMyRide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PimpMyRide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C30A9D3B1D2145560050458E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C30A9D3D1D2145560050458E /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -31,17 +35,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD76E1CB2DF5800062A22EA3 /* Pods_PimpMyRide.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8AC21C1952F548ECC54AA81F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0E2BDB1396440B2B1F4D156A /* Pods_PimpMyRide.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C30A9D2F1D2145560050458E = {
 			isa = PBXGroup;
 			children = (
 				C30A9D3A1D2145560050458E /* PimpMyRide */,
 				C30A9D391D2145560050458E /* Products */,
+				EF85C29A42F1B47FA17CDA4D /* Pods */,
+				8AC21C1952F548ECC54AA81F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +82,15 @@
 			path = PimpMyRide;
 			sourceTree = "<group>";
 		};
+		EF85C29A42F1B47FA17CDA4D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8FC53992C0C52910FB3EC800 /* Pods-PimpMyRide.debug.xcconfig */,
+				4CEC1AB7681FF25E23C41F9B /* Pods-PimpMyRide.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +98,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C30A9D4C1D2145560050458E /* Build configuration list for PBXNativeTarget "PimpMyRide" */;
 			buildPhases = (
+				40C34AFBA0CFC7B96433840A /* [CP] Check Pods Manifest.lock */,
 				C30A9D341D2145560050458E /* Sources */,
 				C30A9D351D2145560050458E /* Frameworks */,
 				C30A9D361D2145560050458E /* Resources */,
+				ACACF0084078DEEF323D374D /* [CP] Embed Pods Frameworks */,
+				15C1E0D544CA1E354AA989A4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -133,6 +160,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		15C1E0D544CA1E354AA989A4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PimpMyRide/Pods-PimpMyRide-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		40C34AFBA0CFC7B96433840A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		ACACF0084078DEEF323D374D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PimpMyRide/Pods-PimpMyRide-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C30A9D341D2145560050458E /* Sources */ = {
@@ -252,6 +327,7 @@
 		};
 		C30A9D4D1D2145560050458E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8FC53992C0C52910FB3EC800 /* Pods-PimpMyRide.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -266,6 +342,7 @@
 		};
 		C30A9D4E1D2145560050458E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4CEC1AB7681FF25E23C41F9B /* Pods-PimpMyRide.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -297,6 +374,7 @@
 				C30A9D4E1D2145560050458E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

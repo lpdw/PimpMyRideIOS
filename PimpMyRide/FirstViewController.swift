@@ -6,6 +6,7 @@
 //  Copyright © 2016 Yassin Aghani. All rights reserved.
 //
 
+import Alamofire
 import UIKit
 import CoreBluetooth
 

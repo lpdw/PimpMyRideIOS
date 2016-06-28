@@ -1,0 +1,6 @@
+framework module Pods_PimpMyRide {
+  umbrella header "Pods-PimpMyRide-umbrella.h"
+
+  export *
+  module * { export * }
+}
