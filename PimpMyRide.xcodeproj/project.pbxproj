@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7DB518ED1D22B09C001FE88E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB518EC1D22B09C001FE88E /* LoginViewController.swift */; };
+		7DB519251D232D0F001FE88E /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DB519241D232D0F001FE88E /* Launch Screen.storyboard */; };
 		AD76E1CB2DF5800062A22EA3 /* Pods_PimpMyRide.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E2BDB1396440B2B1F4D156A /* Pods_PimpMyRide.framework */; };
 		C30A9D3C1D2145560050458E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30A9D3B1D2145560050458E /* AppDelegate.swift */; };
 		C30A9D3E1D2145560050458E /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30A9D3D1D2145560050458E /* FirstViewController.swift */; };
@@ -19,6 +21,8 @@
 /* Begin PBXFileReference section */
 		0E2BDB1396440B2B1F4D156A /* Pods_PimpMyRide.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PimpMyRide.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CEC1AB7681FF25E23C41F9B /* Pods-PimpMyRide.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PimpMyRide.release.xcconfig"; path = "Pods/Target Support Files/Pods-PimpMyRide/Pods-PimpMyRide.release.xcconfig"; sourceTree = "<group>"; };
+		7DB518EC1D22B09C001FE88E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		7DB519241D232D0F001FE88E /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		8FC53992C0C52910FB3EC800 /* Pods-PimpMyRide.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PimpMyRide.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PimpMyRide/Pods-PimpMyRide.debug.xcconfig"; sourceTree = "<group>"; };
 		C30A9D381D2145560050458E /* PimpMyRide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PimpMyRide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C30A9D3B1D2145560050458E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -74,10 +78,12 @@
 				C30A9D3B1D2145560050458E /* AppDelegate.swift */,
 				C30A9D3D1D2145560050458E /* FirstViewController.swift */,
 				C30A9D3F1D2145560050458E /* SecondViewController.swift */,
+				7DB518EC1D22B09C001FE88E /* LoginViewController.swift */,
 				C30A9D411D2145560050458E /* Main.storyboard */,
 				C30A9D441D2145560050458E /* Assets.xcassets */,
 				C30A9D461D2145560050458E /* LaunchScreen.storyboard */,
 				C30A9D491D2145560050458E /* Info.plist */,
+				7DB519241D232D0F001FE88E /* Launch Screen.storyboard */,
 			);
 			path = PimpMyRide;
 			sourceTree = "<group>";
@@ -126,7 +132,7 @@
 				TargetAttributes = {
 					C30A9D371D2145560050458E = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 6TH9Q8J5GC;
+						DevelopmentTeam = M39JT7VV37;
 					};
 				};
 			};
@@ -155,6 +161,7 @@
 			files = (
 				C30A9D481D2145560050458E /* LaunchScreen.storyboard in Resources */,
 				C30A9D451D2145560050458E /* Assets.xcassets in Resources */,
+				7DB519251D232D0F001FE88E /* Launch Screen.storyboard in Resources */,
 				C30A9D431D2145560050458E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -214,6 +221,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DB518ED1D22B09C001FE88E /* LoginViewController.swift in Sources */,
 				C30A9D401D2145560050458E /* SecondViewController.swift in Sources */,
 				C30A9D3C1D2145560050458E /* AppDelegate.swift in Sources */,
 				C30A9D3E1D2145560050458E /* FirstViewController.swift in Sources */,
@@ -334,7 +342,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = PimpMyRide/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.aghani.PimpMyRide;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mangubu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -349,7 +357,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = PimpMyRide/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.aghani.PimpMyRide;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mangubu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

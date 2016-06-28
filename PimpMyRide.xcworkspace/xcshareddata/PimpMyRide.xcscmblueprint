@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "3FED182EA088D5CEE270C332756B64404019A016",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "50F332439CC0DCC4484E09FA62F0260EA531BF10" : 0,
+    "3FED182EA088D5CEE270C332756B64404019A016" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "FDF5B996-A809-4A37-8AF8-5B4FCA75F7F4",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "50F332439CC0DCC4484E09FA62F0260EA531BF10" : "..\/TextFieldEffects",
+    "3FED182EA088D5CEE270C332756B64404019A016" : "PimpMyRideIOS\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "PimpMyRide",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "PimpMyRide.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:lpdw\/PimpMyRideIOS.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "3FED182EA088D5CEE270C332756B64404019A016"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:raulriera\/TextFieldEffects.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "50F332439CC0DCC4484E09FA62F0260EA531BF10"
+    }
+  ]
+}
