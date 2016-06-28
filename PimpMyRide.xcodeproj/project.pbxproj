@@ -15,7 +15,6 @@
 		C30A9D401D2145560050458E /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30A9D3F1D2145560050458E /* SecondViewController.swift */; };
 		C30A9D431D2145560050458E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C30A9D411D2145560050458E /* Main.storyboard */; };
 		C30A9D451D2145560050458E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C30A9D441D2145560050458E /* Assets.xcassets */; };
-		C30A9D481D2145560050458E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C30A9D461D2145560050458E /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,7 +29,6 @@
 		C30A9D3F1D2145560050458E /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		C30A9D421D2145560050458E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C30A9D441D2145560050458E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		C30A9D471D2145560050458E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C30A9D491D2145560050458E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,7 +79,6 @@
 				7DB518EC1D22B09C001FE88E /* LoginViewController.swift */,
 				C30A9D411D2145560050458E /* Main.storyboard */,
 				C30A9D441D2145560050458E /* Assets.xcassets */,
-				C30A9D461D2145560050458E /* LaunchScreen.storyboard */,
 				C30A9D491D2145560050458E /* Info.plist */,
 				7DB519241D232D0F001FE88E /* Launch Screen.storyboard */,
 			);
@@ -159,7 +156,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C30A9D481D2145560050458E /* LaunchScreen.storyboard in Resources */,
 				C30A9D451D2145560050458E /* Assets.xcassets in Resources */,
 				7DB519251D232D0F001FE88E /* Launch Screen.storyboard in Resources */,
 				C30A9D431D2145560050458E /* Main.storyboard in Resources */,
@@ -237,14 +233,6 @@
 				C30A9D421D2145560050458E /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		C30A9D461D2145560050458E /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C30A9D471D2145560050458E /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
