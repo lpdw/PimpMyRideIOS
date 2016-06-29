@@ -3,15 +3,18 @@ PODS:
   - ChameleonFramework/Default (2.1.0)
   - ChameleonFramework/Swift (2.1.0):
     - ChameleonFramework/Default
+  - MBCircularProgressBar (0.3.4)
 
 DEPENDENCIES:
   - Alamofire (~> 3.4)
   - ChameleonFramework/Swift
+  - MBCircularProgressBar
 
 SPEC CHECKSUMS:
   Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
+  MBCircularProgressBar: ff3b8e2f441214d9ee122a24ba0d4d00cc7de881
 
-PODFILE CHECKSUM: b239fd5ca3b6ffd13974dd9158397869b8807ede
+PODFILE CHECKSUM: 80ded85d381e0ad30ec2d59e82ea3027a122ece9
 
 COCOAPODS: 1.0.1

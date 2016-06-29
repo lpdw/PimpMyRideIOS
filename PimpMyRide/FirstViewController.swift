@@ -6,6 +6,7 @@
 //  Copyright © 2016 Yassin Aghani. All rights reserved.
 //
 
+import MBCircularProgressBar
 import Alamofire
 import UIKit
 import CoreBluetooth
@@ -19,21 +20,22 @@ class FirstViewController: UIViewController, CBCentralManagerDelegate, CBPeriphe
     
     @IBOutlet weak var speedLabel: UILabel!
     
-    
-    @IBOutlet weak var UsernameText: UILabel!
-    
-    @IBOutlet weak var PasswordText: UILabel!
-    
+    @IBOutlet weak var circularProgressBar: MBCircularProgressBarView!
+    @IBOutlet weak var dashboardView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         manager  = CBCentralManager(delegate:self, queue:nil, options: nil)
         
-        UsernameText.text = receivedUsername
-        PasswordText.text = receivedPassword
+        self.dashboardView.layer.shadowColor = UIColor.flatGrayColor().CGColor
+        self.dashboardView.layer.shadowOffset = CGSize(width: 0, height: 10)
+        self.dashboardView.layer.shadowOpacity = 0.4
         
-        print("USERNAME",receivedUsername)
-        print("PASSWORD",receivedPassword)
+        //UsernameText.text = receivedUsername
+        //PasswordText.text = receivedPassword
+        
+        //print("USERNAME",receivedUsername)
+        //print("PASSWORD",receivedPassword)
        
     }
 
@@ -106,8 +108,9 @@ class FirstViewController: UIViewController, CBCentralManagerDelegate, CBPeriphe
             print("characteristic changed:\(json)")
             
             if let reponse = convertStringToDictionary(json){
-                let speed = reponse["speed"] as! Float
-                speedLabel.text = "\(speed)"
+                let speed = reponse["speed"] as! CGFloat
+                //speedLabel.text = "\(speed)"
+                circularProgressBar.value = speed
             }
             
             //let alertController = UIAlertController(title: "Bluetooh", message: message, preferredStyle: .Alert)
