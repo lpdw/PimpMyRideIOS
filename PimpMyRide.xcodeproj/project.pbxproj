@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		7DB518ED1D22B09C001FE88E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB518EC1D22B09C001FE88E /* LoginViewController.swift */; };
 		7DB519251D232D0F001FE88E /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DB519241D232D0F001FE88E /* Launch Screen.storyboard */; };
+		7DB519571D242E85001FE88E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DB519561D242E85001FE88E /* Main.storyboard */; };
 		AD76E1CB2DF5800062A22EA3 /* Pods_PimpMyRide.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E2BDB1396440B2B1F4D156A /* Pods_PimpMyRide.framework */; };
 		C30A9D3C1D2145560050458E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30A9D3B1D2145560050458E /* AppDelegate.swift */; };
 		C30A9D3E1D2145560050458E /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30A9D3D1D2145560050458E /* FirstViewController.swift */; };
 		C30A9D401D2145560050458E /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30A9D3F1D2145560050458E /* SecondViewController.swift */; };
-		C30A9D431D2145560050458E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C30A9D411D2145560050458E /* Main.storyboard */; };
 		C30A9D451D2145560050458E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C30A9D441D2145560050458E /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -22,12 +22,12 @@
 		4CEC1AB7681FF25E23C41F9B /* Pods-PimpMyRide.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PimpMyRide.release.xcconfig"; path = "Pods/Target Support Files/Pods-PimpMyRide/Pods-PimpMyRide.release.xcconfig"; sourceTree = "<group>"; };
 		7DB518EC1D22B09C001FE88E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		7DB519241D232D0F001FE88E /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		7DB519561D242E85001FE88E /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		8FC53992C0C52910FB3EC800 /* Pods-PimpMyRide.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PimpMyRide.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PimpMyRide/Pods-PimpMyRide.debug.xcconfig"; sourceTree = "<group>"; };
 		C30A9D381D2145560050458E /* PimpMyRide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PimpMyRide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C30A9D3B1D2145560050458E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C30A9D3D1D2145560050458E /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		C30A9D3F1D2145560050458E /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
-		C30A9D421D2145560050458E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C30A9D441D2145560050458E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C30A9D491D2145560050458E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -77,7 +77,7 @@
 				C30A9D3D1D2145560050458E /* FirstViewController.swift */,
 				C30A9D3F1D2145560050458E /* SecondViewController.swift */,
 				7DB518EC1D22B09C001FE88E /* LoginViewController.swift */,
-				C30A9D411D2145560050458E /* Main.storyboard */,
+				7DB519561D242E85001FE88E /* Main.storyboard */,
 				C30A9D441D2145560050458E /* Assets.xcassets */,
 				C30A9D491D2145560050458E /* Info.plist */,
 				7DB519241D232D0F001FE88E /* Launch Screen.storyboard */,
@@ -156,9 +156,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DB519571D242E85001FE88E /* Main.storyboard in Resources */,
 				C30A9D451D2145560050458E /* Assets.xcassets in Resources */,
 				7DB519251D232D0F001FE88E /* Launch Screen.storyboard in Resources */,
-				C30A9D431D2145560050458E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,17 +225,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		C30A9D411D2145560050458E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C30A9D421D2145560050458E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		C30A9D4A1D2145560050458E /* Debug */ = {

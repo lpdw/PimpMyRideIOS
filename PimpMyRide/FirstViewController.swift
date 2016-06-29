@@ -13,13 +13,28 @@ import CoreBluetooth
 class FirstViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDelegate {
     var manager:CBCentralManager? = nil
     var scooter:CBPeripheral!
+    
+    var receivedUsername:String = ""
+    var receivedPassword:String = ""
+    
     @IBOutlet weak var speedLabel: UILabel!
+    
+    
+    @IBOutlet weak var UsernameText: UILabel!
+    
+    @IBOutlet weak var PasswordText: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-         manager = CBCentralManager(delegate:self, queue:nil, options: nil)
+        manager  = CBCentralManager(delegate:self, queue:nil, options: nil)
         
-        // Do any additional setup after loading the view, typically from a nib.
+        UsernameText.text = receivedUsername
+        PasswordText.text = receivedPassword
+        
+        print("USERNAME",receivedUsername)
+        print("PASSWORD",receivedPassword)
+       
     }
 
     override func didReceiveMemoryWarning() {

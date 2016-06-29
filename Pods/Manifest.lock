@@ -1,20 +1,17 @@
 PODS:
   - Alamofire (3.4.1)
-  - ChameleonFramework (2.1.0):
-    - ChameleonFramework/Default (= 2.1.0)
   - ChameleonFramework/Default (2.1.0)
-  - TextFieldEffects (1.2.0)
+  - ChameleonFramework/Swift (2.1.0):
+    - ChameleonFramework/Default
 
 DEPENDENCIES:
   - Alamofire (~> 3.4)
-  - ChameleonFramework
-  - TextFieldEffects
+  - ChameleonFramework/Swift
 
 SPEC CHECKSUMS:
   Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
-  TextFieldEffects: bc4fd3bd557321bd61a0762f3f50965477a36f62
 
-PODFILE CHECKSUM: f3ead0bf70ee3ede94580b5ed4ee1ae1cb3d0556
+PODFILE CHECKSUM: b239fd5ca3b6ffd13974dd9158397869b8807ede
 
 COCOAPODS: 1.0.1

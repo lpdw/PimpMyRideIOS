@@ -4,7 +4,6 @@ use_frameworks!
 
 target ‘PimpMyRide’ do
 	pod 'Alamofire', '~> 3.4'
-	pod "TextFieldEffects"
-	pod 'ChameleonFramework'
+	pod 'ChameleonFramework/Swift'
 
 end
