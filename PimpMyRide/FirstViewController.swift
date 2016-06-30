@@ -16,6 +16,8 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate, BleDeleg
     var manager:CBCentralManager? = nil
     var scooter:CBPeripheral!
     var characteristic:CBCharacteristic?
+    var alamofireManager : Alamofire.Manager?
+
     
     let locationManager = CLLocationManager()
     
@@ -51,6 +53,70 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate, BleDeleg
         let token = defaults.objectForKey("Token") as! String
         print("token=============================================================",token)
         
+        //FIRST WE NEED TO HAVE SCOOTER _ID FROM /user/me
+         let urlForUser = "https://pimp-my-ride.herokuapp.com/users/me"
+         Alamofire.request(.GET, urlForUser , parameters: ["token": token])
+         .responseJSON {
+         response in switch response.result {
+         case .Success(let JSON):
+         print("PARAMETERS PAGE Success with JSON ================>: \(JSON)")
+         let response = JSON as! NSDictionary
+         let user = response.objectForKey("user") as! NSDictionary
+         let scooters = user.objectForKey("scooters") as! NSArray
+         let scooterId = scooters.firstObject as! String
+         
+         print ("USER =========================================>", scooterId)
+         
+         //THEN WE NEED TO HAVE arduinoD FROM scooters/:arduinoID
+         let urlForArduinoID = "https://pimp-my-ride.herokuapp.com/scooters/\(scooterId)"
+         print("urlForArduinoID ======================>",urlForArduinoID)
+         Alamofire.request(.GET, urlForArduinoID , parameters: ["token": token])
+            .responseJSON {
+                response in switch response.result {
+                case .Success(let JSON):
+                    print("PARAMETERS PAGE Success with JSON: \(JSON)")
+                    let response = JSON as! NSDictionary
+                    let scooter = response.objectForKey("scooter") as! NSDictionary
+                    let arduinoID = scooter.objectForKey("arduinoID") as! String
+                    
+                    print ("ARDUINOID =========================================>", arduinoID)
+                    //let displayName = self.defaults.objectForKey("displayName") as! String
+                
+                    
+                    //THEN WE NEED TO UPDATE SCOOTER VALUE WITH DATA FROM BLE  scooters/:arduinoID
+                    let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+                    configuration.timeoutIntervalForResource = 2 // seconds
+                    
+                    
+                    let urlForUpdate = "https://pimp-my-ride.herokuapp.com/scooters/\(arduinoID)"
+                    print("URL======================>",urlForUpdate)
+                    self.alamofireManager = Alamofire.Manager(configuration: configuration)
+                    self.alamofireManager!.request(.PUT, urlForUpdate , parameters: ["token": token,"temperature": "100","humidity": "100","speed": "100"])
+                        .responseJSON {
+                            response in switch response.result {
+                            case .Success(let JSON):
+                                print("PARAMETERS PAGE Success with JSON: \(JSON)")
+                                let response = JSON as! NSDictionary
+                                
+                                print ("FINALRESPONSE =========================================>", response)
+                                //let displayName = self.defaults.objectForKey("displayName") as! String
+                                
+                            case .Failure(let error):
+                                print("Request failed with error for Updating scooter data: \(error)")
+                            }
+                    }
+                    
+                case .Failure(let error):
+                    print("Request failed with error for arduino ID: \(error)")
+                }
+                
+            }
+
+         case .Failure(let error):
+         print("Request failed with error for Scooter _id: \(error)")
+         }
+         
+         }
         
         self.dashboardView.layer.shadowColor = UIColor.flatGrayColor().CGColor
         self.dashboardView.layer.shadowOffset = CGSize(width: 0, height: 10)
