@@ -7,29 +7,50 @@
 //
 
 import MBCircularProgressBar
+import CoreLocation
 import Alamofire
 import UIKit
 import CoreBluetooth
 
-class FirstViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDelegate {
+class FirstViewController: UIViewController, CLLocationManagerDelegate, BleDelegate {
     var manager:CBCentralManager? = nil
     var scooter:CBPeripheral!
+    var characteristic:CBCharacteristic?
+    
+    let locationManager = CLLocationManager()
     
     let defaults = NSUserDefaults.standardUserDefaults()
     
+    @IBOutlet weak var bluethootImage: UIImageView!
     @IBOutlet weak var speedLabel: UILabel!
     
     @IBOutlet weak var circularProgressBar: MBCircularProgressBarView!
     @IBOutlet weak var dashboardView: UIView!
+    @IBOutlet weak var temperatureProgressBar: MBCircularProgressBarView!
+    @IBOutlet weak var temperatureLabel: UILabel!
+    @IBOutlet weak var humidityProgressBar: MBCircularProgressBarView!
     
+    @IBOutlet weak var humidityLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDelegate.addBleDelegate(self);
         
+        // Ask for Authorisation from the User.
+        self.locationManager.requestAlwaysAuthorization()
+        
+        // For use in foreground
+        self.locationManager.requestWhenInUseAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
         
         let token = defaults.objectForKey("Token") as! String
         print("token=============================================================",token)
         
-        manager  = CBCentralManager(delegate:self, queue:nil, options: nil)
         
         self.dashboardView.layer.shadowColor = UIColor.flatGrayColor().CGColor
         self.dashboardView.layer.shadowOffset = CGSize(width: 0, height: 10)
@@ -39,102 +60,57 @@ class FirstViewController: UIViewController, CBCentralManagerDelegate, CBPeriphe
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-    func centralManagerDidUpdateState(central: CBCentralManager) {
-        var msg = ""
-        switch (central.state) {
-        case .PoweredOff:
-            msg = "CoreBluetooth BLE hardware is powered off"
-        case .PoweredOn:
-            msg = "CoreBluetooth BLE hardware is powered on and ready"
-        case .Resetting:
-            msg = "CoreBluetooth BLE hardware is resetting"
-            
-        case .Unauthorized:
-            msg = "CoreBluetooth BLE state is unauthorized"
-            
-        case .Unknown:
-            msg = "CoreBluetooth BLE state is unknown"
-            
-        case .Unsupported:
-            msg = "CoreBluetooth BLE hardware is unsupported on this platform"
-            
-        }
-        print(msg)
+    func bleSendData(data: [String: AnyObject]) {
+        let speed = data["speed"] as! CGFloat
+        //speedLabel.text = "\(speed)"
+        circularProgressBar.value = speed
         
-        central.scanForPeripheralsWithServices(nil, options: nil)
+        let temperature = data["temperature"] as! CGFloat
+        temperatureLabel.text = "\(Int(temperature)) °C"
+        temperatureProgressBar.value = temperature
+        let humidity = data["humidity"] as! CGFloat
+        humidityLabel.text = "\(Int(humidity)) %"
+        humidityProgressBar.value = humidity
     }
     
-    func centralManager(central: CBCentralManager, didDiscoverPeripheral peripheral: CBPeripheral, advertisementData: [String : AnyObject], RSSI: NSNumber) {
+    func bleConnect(){
+        let image = UIImage(named: "bluetooth-blue")
+        self.bluethootImage.image = image
         
-        if (peripheral.name == "PIMPMYRIDE"){
-            print("Discovered: \(peripheral.name) at \(RSSI)")
-            //print("AdvertisementData:\(advertisementData)")
-            scooter = peripheral
-            manager?.connectPeripheral(scooter, options: nil)
-            scooter.delegate = self
-            manager?.stopScan()
-        }
-    }
-    
-    func peripheral(peripheral: CBPeripheral, didDiscoverServices error: NSError?) {
-        print("Services:\(peripheral.services) and error\(error)")
-        if let services = peripheral.services {
-            for service in services {
-                peripheral.discoverCharacteristics(nil, forService: service)
-            }
-        }
-    }
-    
-    func convertStringToDictionary(text: String) -> [String:AnyObject]? {
-        if let data = text.dataUsingEncoding(NSUTF8StringEncoding) {
-            do {
-                return try NSJSONSerialization.JSONObjectWithData(data, options: []) as? [String:AnyObject]
-            } catch let error as NSError {
-                print(error)
-            }
-        }
-        return nil
-    }
-    
-    func peripheral(peripheral: CBPeripheral, didUpdateValueForCharacteristic characteristic: CBCharacteristic, error: NSError?) {
+        let alertController = UIAlertController(title: "Sate", message:"Connected", preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "Close", style: UIAlertActionStyle.Default,handler: nil))
         
+        self.presentViewController(alertController, animated: true, completion: nil)
         
-        if let json = String(data: characteristic.value!, encoding: NSUTF8StringEncoding) {
-            print("characteristic changed:\(json)")
-            
-            if let reponse = convertStringToDictionary(json){
-                let speed = reponse["speed"] as! CGFloat
-                //speedLabel.text = "\(speed)"
-                circularProgressBar.value = speed
-            }
-            
-            //let alertController = UIAlertController(title: "Bluetooh", message: message, preferredStyle: .Alert)
-            //alertController.addAction(UIAlertAction(title: "Close", style: .Cancel, handler: nil))
-            //self.presentViewController(alertController, animated: true, completion: nil)
-        }
     }
     
-    func peripheral(peripheral: CBPeripheral, didDiscoverCharacteristicsForService service: CBService, error: NSError?) {
-        print("peripheral:\(peripheral) and service:\(service)")
-        for characteristic in service.characteristics!
-        {
-            peripheral.setNotifyValue(true, forCharacteristic: characteristic)
-        }
+    func bleDisconnect(){
+        let image = UIImage(named: "bluetooth")
+        self.bluethootImage.image = image
+        
+        let alertController = UIAlertController(title: "Sate", message:"Disconnected", preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "Close", style: UIAlertActionStyle.Default,handler: nil))
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
+        circularProgressBar.value = 0.0
+        temperatureProgressBar.value = 0.0
+        humidityProgressBar.value = 0.0
+        temperatureLabel.text = "-- °c"
+        humidityLabel.text = "-- %"
     }
     
-    func centralManager(central: CBCentralManager, didConnectPeripheral peripheral: CBPeripheral) {
-        print("CONNECT")
-        peripheral.discoverServices(nil)
-    }
-    
-    func centralManager(central: CBCentralManager, didFailToConnectPeripheral peripheral: CBPeripheral, error: NSError?) {
-        print("FAIL")
-    }
-    func centralManager(central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: NSError?) {
-        print("DISCONNECT")
+    func bleFail(){
+        let image = UIImage(named: "bluetooth")
+        self.bluethootImage.image = image
+        
+        let alertController = UIAlertController(title: "Sate", message:"Failed", preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "Close", style: UIAlertActionStyle.Default,handler: nil))
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
+        circularProgressBar.value = 0.0
+
     }
 }
 
