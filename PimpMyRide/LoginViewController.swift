@@ -15,6 +15,8 @@ class LoginViewController: UIViewController {
     //let username = "Admin"
     //let password = "password"
     
+    let defaults = NSUserDefaults.standardUserDefaults()
+    
     @IBOutlet weak var usernameField: UITextView!
     
     @IBOutlet weak var passwordField: UITextView!
@@ -40,8 +42,9 @@ class LoginViewController: UIViewController {
                     
                     self.presentViewController(alertController, animated: true, completion: nil)
                 }
-                else if ((response.objectForKey("token")) != nil){
-                    
+                else if let token = response.objectForKey("token"){
+                    //print("TOKEN----------------", token)
+                    self.defaults.setObject(token, forKey: "Token")
                     self.performSegueWithIdentifier("loginSegue", sender: self)
                 }
                 
@@ -73,12 +76,4 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "loginSegue" {
-            if let destination = segue.destinationViewController as? FirstViewController {
-                destination.receivedUsername = self.usernameField.text
-                destination.receivedPassword = self.passwordField.text
-            }
-        }
-    }
 }

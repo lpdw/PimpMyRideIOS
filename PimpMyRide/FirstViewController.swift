@@ -15,8 +15,7 @@ class FirstViewController: UIViewController, CBCentralManagerDelegate, CBPeriphe
     var manager:CBCentralManager? = nil
     var scooter:CBPeripheral!
     
-    var receivedUsername:String = ""
-    var receivedPassword:String = ""
+    let defaults = NSUserDefaults.standardUserDefaults()
     
     @IBOutlet weak var speedLabel: UILabel!
     
@@ -25,17 +24,16 @@ class FirstViewController: UIViewController, CBCentralManagerDelegate, CBPeriphe
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        let token = defaults.objectForKey("Token") as! String
+        print("token=============================================================",token)
+        
         manager  = CBCentralManager(delegate:self, queue:nil, options: nil)
         
         self.dashboardView.layer.shadowColor = UIColor.flatGrayColor().CGColor
         self.dashboardView.layer.shadowOffset = CGSize(width: 0, height: 10)
         self.dashboardView.layer.shadowOpacity = 0.4
-        
-        //UsernameText.text = receivedUsername
-        //PasswordText.text = receivedPassword
-        
-        //print("USERNAME",receivedUsername)
-        //print("PASSWORD",receivedPassword)
        
     }
 

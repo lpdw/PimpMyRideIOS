@@ -130,6 +130,11 @@
 					C30A9D371D2145560050458E = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = M39JT7VV37;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
